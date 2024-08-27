@@ -43,3 +43,18 @@ function alertFunction () {
 }
 const btn3 = document.querySelector('#btn-3')
 btn3.addEventListener('click', alertFunction);
+
+// Event target
+const btnTarget = document.querySelector('#btn-event')
+btnTarget.addEventListener('click', function(e) {
+    // console.log(e.target);
+    e.target.style.background = 'blue';
+})
+
+// query several buttons within same class
+const buttons = document.querySelectorAll('.btns')
+buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        e.target.style.background = 'red';
+    })
+})
